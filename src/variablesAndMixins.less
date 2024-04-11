@@ -1,0 +1,16 @@
+@sizes: {
+  mobileSmall: 320px;
+  mobileMedium: 375px;
+  mobileLarge: 425px;
+  tablet: 768px;
+  desktop: 1024px;
+  desktopLarge: 1440px;
+  desktop4k: 2560px;
+};
+
+.displayFlexProps(@flexDirection, @alignItems, @justifyContent) {
+  display: flex;
+  flex-direction: @flexDirection;
+  align-items: @alignItems;
+  justify-content: @justifyContent;
+}

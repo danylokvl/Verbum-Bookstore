@@ -1,0 +1,23 @@
+@import "../../variablesAndMixins.less";
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  .header__nav {
+    .displayFlexProps(row, center, space-between);
+    .header__linksListLeft {
+      .header__linksListItem {
+      }
+    }
+    .header__logo {
+    }
+    .header__linksListRight {
+      .header__linksListItem {
+      }
+    }
+  }
+}
