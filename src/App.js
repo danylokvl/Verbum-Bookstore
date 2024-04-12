@@ -12,6 +12,7 @@ import "./assets/fonts/mariupol/MARIUPOL-MEDIUM.OTF";
 import "./assets/fonts/mariupol/MARIUPOL-REGULAR.OTF";
 
 import "./App.less";
+
 function App() {
   return (
     <Router>

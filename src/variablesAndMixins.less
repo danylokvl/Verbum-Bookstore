@@ -1,3 +1,11 @@
+@colors: {
+  color1: #2d2926;
+  color2: #505457;
+  color3: #888789;
+  color4: #c6c5c3;
+  color5: #b2604b;
+};
+
 @sizes: {
   mobileSmall: 320px;
   mobileMedium: 375px;
@@ -13,4 +21,28 @@
   flex-direction: @flexDirection;
   align-items: @alignItems;
   justify-content: @justifyContent;
+}
+
+.textAddStyles(@fontFamily, @fontsize, @color) {
+  font-family: @fontFamily;
+  font-size: @fontsize;
+  color: @color;
+}
+
+.linkAddLineEffect(@color) {
+  &::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: @color;
+    transition: transform 0.5s ease-in-out;
+  }
+  &:hover {
+    &::after {
+      transform: translateX(100%);
+    }
+  }
 }

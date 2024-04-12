@@ -1,3 +1,5 @@
+@import "./variablesAndMixins.less";
+
 @font-face {
   font-family: "MARIUPOL-REGULAR";
   src: url("./assets/fonts/mariupol/MARIUPOL-REGULAR.OTF") format("woff2"),
@@ -16,93 +18,12 @@
     url("./assets/fonts/mariupol/MARIUPOL-BOLD.OTF") format("woff");
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+* {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  box-sizing: border-box;
   font: inherit;
-  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -120,24 +41,23 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
   min-width: 100vw;
   min-height: 100vh;
   font-family: "MARIUPOL-REGULAR";
 }
 
-#root {
-  min-height: 100vh;
-}
-
 .wrapper {
   position: relative;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
   max-width: 1440px;
+
+  @media (min-width: @sizes[mobileSmall]) and (max-width: @sizes[desktop]) {
+    max-width: 95%;
+  }
 }
 
 ol,
@@ -158,4 +78,16 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  background-color: unset;
+  border: 0;
+  cursor: pointer;
 }

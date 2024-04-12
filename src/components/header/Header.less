@@ -1,22 +1,79 @@
 @import "../../variablesAndMixins.less";
 
-header {
+.header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  padding: 20px 0;
+  background-color: white;
 
-  .header__nav {
-    .displayFlexProps(row, center, space-between);
+  .header__navMobile {
+    display: none;
+  }
+
+  .header__navLargeDesktop {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    justify-content: space-between;
+    .textAddStyles("MARIUPOL-MEDIUM", 16px, @colors[color1]);
+    white-space: nowrap;
     .header__linksListLeft {
+      .displayFlexProps(row, center, unset);
+      li {
+        position: relative;
+        width: fit-content;
+        overflow: hidden;
+        a {
+          .linkAddLineEffect(@colors[color1]);
+          line-height: 180%;
+        }
+      }
+      column-gap: 40px;
       .header__linksListItem {
       }
     }
     .header__logo {
+      cursor: pointer;
     }
     .header__linksListRight {
+      .displayFlexProps(row, center, flex-end );
+      column-gap: 40px;
       .header__linksListItem {
+        button {
+          display: flex;
+          align-items: center;
+          column-gap: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .header {
+    .header__navLargeDesktop {
+      display: none;
+    }
+    .header__navMobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .header__leftContainer {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+      }
+      .header__logo {
+        position: absolute;
+        left: 45%;
+      }
+
+      .header__linksListRight {
+        .displayFlexProps(row, center, flex-end);
+        column-gap: 24px;
+        margin-left: auto;
       }
     }
   }
