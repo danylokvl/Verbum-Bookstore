@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./Header.less";
+import ToggleMenu from "../toggleMenu/ToggleMenu";
 import logo from "../../assets/images/logo.png";
 import search from "../../assets/icons/search.svg";
 import person from "../../assets/icons/person.svg";
@@ -10,7 +11,12 @@ import menu from "../../assets/icons/menu.svg";
 import xmark from "../../assets/icons/xmark.svg";
 
 const Header = () => {
-  const [menuIsClicked, setMenuIsClicked] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.querySelector(".overlay").classList.toggle("active", menuIsOpen);
+    document.querySelector(".toggleMenu").classList.toggle("active", menuIsOpen);
+  }, [menuIsOpen]);
 
   return (
     <header className="header">
@@ -59,8 +65,8 @@ const Header = () => {
       </nav>
       <nav className="header__navMobile">
         <div className="header__leftContainer">
-          <button className="header__menu" onClick={() => setMenuIsClicked(!menuIsClicked)}>
-            <img src={menuIsClicked ? xmark : menu} />
+          <button className="header__menu" onClick={() => setMenuIsOpen(true)}>
+            <img src={menuIsOpen ? xmark : menu} />
           </button>
           <button className="header__search">
             <img src={search} />
@@ -86,6 +92,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <ToggleMenu setMenuIsOpen={setMenuIsOpen} />
     </header>
   );
 };

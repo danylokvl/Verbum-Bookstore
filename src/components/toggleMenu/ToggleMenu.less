@@ -1,0 +1,76 @@
+@import "../../variablesAndMixins.less";
+
+.toggleMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  max-width: 320px;
+  background-color: @colors[color4];
+  transition: transform 0.5s ease;
+  transform: translateX(-100%);
+  &.active {
+    transform: translateX(0);
+  }
+  .textAddStyles("MARIUPOL-MEDIUM", 18px, @colors[color1]);
+  .toggleMenu__openCloseContainer {
+    background-color: @colors[color1];
+    padding: 16px 24px;
+    .displayFlexProps(row, center, space-between);
+    span {
+      color: white;
+    }
+  }
+  .toggleMenu__linksList {
+    li {
+      padding: 16px 24px;
+      position: relative;
+      .displayFlexProps(row, center, space-between);
+      background-color: white;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: @colors[color3];
+        width: 100%;
+        height: 1px;
+      }
+      span {
+        color: @colors[color2];
+      }
+    }
+  }
+  .toggleMenu__textContainer {
+    padding: 24px;
+    h3 {
+      margin-bottom: 24px;
+    }
+    ul {
+      li {
+        .displayFlexProps(row,center,unset);
+        column-gap: 8px;
+        margin-bottom: 24px;
+        span {
+          color: @colors[color2];
+        }
+      }
+    }
+  }
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: @colors[color1];
+  opacity: 0.8;
+  &.active {
+    display: block;
+  }
+}
