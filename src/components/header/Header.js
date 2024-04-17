@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./Header.less";
 import ToggleMenu from "../toggleMenu/ToggleMenu";
+import SearchBlock from "./search/SearchBlock";
 import logo from "../../assets/images/logo.png";
 import search from "../../assets/icons/search.svg";
 import person from "../../assets/icons/person.svg";
@@ -20,6 +21,7 @@ const Header = () => {
 
   return (
     <header className="header">
+      <SearchBlock />
       <nav className="header__navLargeDesktop">
         <img className="header__logo" src={logo} />
         <ul className="header__linksListLeft">
@@ -27,18 +29,20 @@ const Header = () => {
             <a>Книги</a>
           </li>
           <li className="header__linksListItem">
-            <a>Автори</a>
-          </li>
-          <li className="header__linksListItem">
             <a>Доставка і Оплата</a>
           </li>
           <li className="header__linksListItem">
             <a>Контакти</a>
           </li>
+          <li className="header__linksListItem">
+            <a>FAQs</a>
+          </li>
         </ul>
         <ul className="header__linksListRight">
           <li className="header__linksListItem">
-            <button>
+            <button
+              onClick={() => document.querySelector(".searchBlock").classList.toggle("active")}
+            >
               <img src={search} />
               <span>Пошук</span>
             </button>
@@ -68,7 +72,10 @@ const Header = () => {
           <button className="header__menu" onClick={() => setMenuIsOpen(true)}>
             <img src={menuIsOpen ? xmark : menu} />
           </button>
-          <button className="header__search">
+          <button
+            className="header__search"
+            onClick={() => document.querySelector(".searchBlock").classList.toggle("active")}
+          >
             <img src={search} />
           </button>
         </div>

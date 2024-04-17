@@ -8,7 +8,6 @@
   z-index: 90;
   padding: 20px 0;
   background-color: white;
-
   .header__navMobile {
     display: none;
   }
@@ -69,11 +68,17 @@
       .header__logo {
         position: absolute;
         left: 45%;
+        @media (max-width: @sizes[mobileLarge]) {
+          left: 35%;
+        }
+        @media (max-width: @sizes[mobileSmall]) {
+          left: 28%;
+        }
       }
 
       .header__linksListRight {
         .displayFlexProps(row, center, flex-end);
-        column-gap: 24px;
+        column-gap: 16px;
         margin-left: auto;
       }
     }

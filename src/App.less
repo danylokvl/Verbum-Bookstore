@@ -80,6 +80,14 @@ table {
   border-spacing: 0;
 }
 
+input {
+  border: none;
+  outline: none;
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
 a {
   cursor: pointer;
 }
@@ -90,4 +98,28 @@ button {
   background-color: unset;
   border: 0;
   cursor: pointer;
+}
+
+h1 {
+  .textAddStyles("MARIUPOL-BOLD", 64px, @colors[color1]);
+}
+
+h2 {
+  .textAddStyles("MARIUPOL-MEDIUM", 52px, @colors[color1]);
+}
+
+h3 {
+  .textAddStyles("MARIUPOL-MEDIUM", 40px, @colors[color1]);
+}
+
+h4 {
+  .textAddStyles("MARIUPOL-MEDIUM", 32px, @colors[color1]);
+}
+
+h5 {
+  .textAddStyles("MARIUPOL-MEDIUM", 24px, @colors[color1]);
+}
+
+h6 {
+  .textAddStyles("MARIUPOL-MEDIUM", 18px, @colors[color1]);
 }

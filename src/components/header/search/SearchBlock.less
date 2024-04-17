@@ -1,0 +1,99 @@
+@import "../../../variablesAndMixins.less";
+
+.searchBlock {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 32px;
+  width: 100vw;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  justify-items: center;
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(-100%);
+  &.active {
+    transform: translateY(0);
+  }
+  #searchBlock__xmarkBtn {
+    margin-left: auto;
+  }
+
+  .searchBlock__topContentContainer {
+    padding-top: 32px;
+    width: 100%;
+    h4 {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .searchBlock__inputForm {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      .displayFlexProps(row, center, space-between);
+      padding: 12px 16px;
+      border: 1px solid @colors[color1];
+      border-radius: 100px;
+      input {
+        width: 100%;
+        .textAddStyles("MARIUPOL-REGULAR", 20px, @colors[color2]);
+      }
+    }
+  }
+  .searchBlock__bottomContentContainer {
+    padding-top: 40px;
+    h5 {
+      margin-bottom: 32px;
+    }
+    .searchBlock__popularItemsContainer {
+      display: grid;
+      grid-template-columns: repeat(6, min-content);
+      justify-content: center;
+      gap: 28px;
+      @media (max-width: @sizes[desktop]) {
+        grid-template-columns: repeat(3, min-content);
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[tablet]) {
+  .searchBlock {
+    padding: 32px 16px;
+    .searchBlock__topContentContainer {
+    }
+    .searchBlock__bottomContentContainer {
+      .searchBlock__popularItemsContainer {
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileLarge]) {
+  .searchBlock {
+    padding-top: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+    .searchBlock__topContentContainer {
+      padding-top: 20px;
+    }
+    .searchBlock__bottomContentContainer {
+      width: fit-content;
+      .searchBlock__popularItemsContainer {
+        grid-template-columns: repeat(2, min-content);
+        justify-content: center;
+        row-gap: 20px;
+        .cardSmall {
+          img {
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+}

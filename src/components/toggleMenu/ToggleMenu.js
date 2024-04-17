@@ -20,11 +20,15 @@ const ToggleMenu = ({ setMenuIsOpen }) => {
             <img src={arrowRight} />
           </li>
           <li>
+            <span>Доставка і Оплата</span>
+            <img src={arrowRight} />
+          </li>
+          <li>
             <span>Контакти</span>
             <img src={arrowRight} />
           </li>
           <li>
-            <span>FAQ</span>
+            <span>FAQs</span>
             <img src={arrowRight} />
           </li>
         </ul>
