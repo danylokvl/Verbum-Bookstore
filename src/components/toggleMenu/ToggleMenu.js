@@ -33,7 +33,7 @@ const ToggleMenu = ({ setMenuIsOpen }) => {
           </li>
         </ul>
         <div className="toggleMenu__textContainer">
-          <h3>Потрібна допомога?</h3>
+          <h6>Потрібна допомога?</h6>
           <ul>
             <li>
               <img src={mailGrey} />

@@ -1,7 +1,5 @@
 import "./HomeHeroSection.less";
-
-import bookGreenLights from "../../../assets/images/bookGreenLights.png";
-import bookDuna from "../../../assets/images/bookDuna.png";
+import ScrollableButton from "../../../components/buttons/ScrollableButton";
 
 const HomeHeroSection = (props) => {
   return (
@@ -14,11 +12,13 @@ const HomeHeroSection = (props) => {
             <span className="homeHeroSection__price">{props.price}</span>
           </div>
           <div className="homeHeroSection__buttonsContainer">
-            <button className="homeHeroSection__button">КУПИТИ</button>
-            <button className="homeHeroSection__button">ПЕРЕГЛЯНУТИ</button>
+            <ScrollableButton className="homeHeroSection__button">купити</ScrollableButton>
+            <ScrollableButton className="homeHeroSection__button">переглянути</ScrollableButton>
           </div>
         </div>
-        <img src={bookDuna} id="bookGreenLights" className="homeHeroSection__image" />
+        <div className="homeHeroSection__imageContainer">
+          <img src={props.img} id="bookDune" className="homeHeroSection__image" />
+        </div>
       </div>
     </section>
   );
