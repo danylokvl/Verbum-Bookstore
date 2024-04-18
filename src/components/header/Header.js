@@ -62,7 +62,7 @@ const Header = () => {
           <li className="header__linksListItem">
             <button>
               <img src={bag} />
-              <span>Корзина</span>
+              <span>Кошик</span>
             </button>
           </li>
         </ul>

@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
-import BooksPage from "./pages/BooksPage";
-import AuthorsPage from "./pages/AuthorsPage";
+import HomePage from "./pages/HomePage/HomePage";
+import BooksPage from "./pages/BooksPage/BooksPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
@@ -21,7 +20,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/books" element={<BooksPage />} />
-          <Route path="/authors" element={<AuthorsPage />} />
         </Routes>
         <Footer />
       </div>
