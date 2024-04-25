@@ -4,7 +4,7 @@
   background-color: @colors[color4];
   width: 100%;
   height: 800px;
-  overflow-y: hidden;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -71,9 +71,9 @@
       overflow-x: visible;
       &.bookDuna {
         padding-left: 20%;
-      }
-      img {
-        width: 130%;
+        img {
+          width: 130%;
+        }
       }
     }
   }
@@ -83,8 +83,6 @@
     column-gap: 16px;
     width: 100%;
     justify-content: center;
-    position: relative;
-    bottom: 4%;
     .homeHeroSection__paginationCircle {
       width: 14px;
       height: 14px;
@@ -101,10 +99,7 @@
   .homeHeroSection {
     .homeHeroSection__content {
       .homeHeroSection__imageContainer {
-        #bookDune {
-          top: 7%;
-          left: -70%;
-          width: 200%;
+        #bookDuna {
         }
       }
     }
@@ -113,17 +108,33 @@
 
 @media (max-width: @sizes[tablet]) {
   .homeHeroSection {
+    .homeHeroSection__arrowButtonsContainer {
+      display: none;
+    }
     .homeHeroSection__content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
       .homeHeroSection__textAndButtonsContainer {
+        align-items: center;
         h2 {
           font-size: 44px;
         }
       }
       .homeHeroSection__imageContainer {
-        #bookDune {
-          left: -60%;
-          top: 16%;
+        grid-row-start: 1;
+        &.bookDuna {
+          padding: 2% 0 0 30%;
+          img {
+            width: 95%;
+          }
         }
+      }
+    }
+    .homeHeroSection__paginationContainer {
+      .homeHeroSection__paginationCircle {
+        width: 10px;
+        height: 10px;
       }
     }
   }
@@ -131,13 +142,10 @@
 
 @media (max-width: @sizes[mobileLarge]) {
   .homeHeroSection {
-    .homeHeroSection__content {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+    .homeHeroSection__content.bookDunaContent {
+      grid-template-rows: 40% 60%;
       .homeHeroSection__textAndButtonsContainer {
-        grid-row-start: 2;
         text-align: center;
-        align-items: center;
 
         .homeHeroSection__pricesContainer {
         }
@@ -153,11 +161,12 @@
         }
       }
       .homeHeroSection__imageContainer {
-        #bookDune {
-          width: 170%;
-          left: -48%;
-          top: unset;
-          bottom: -12%;
+        &.bookDuna {
+          padding-top: 12%;
+          padding-left: 25%;
+          img {
+            min-width: 120%;
+          }
         }
       }
     }

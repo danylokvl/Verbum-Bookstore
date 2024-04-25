@@ -12,6 +12,20 @@ const slidesDataArray = [
     img: bookDuna,
     id: "bookDuna",
   },
+  {
+    headline: "'Дюна' Френк Герберт",
+    discountPrice: "400₴",
+    price: "540₴",
+    img: bookDuna,
+    id: "bookDuna2",
+  },
+  {
+    headline: "'Дюна' Френк Герберт",
+    discountPrice: "400₴",
+    price: "540₴",
+    img: bookDuna,
+    id: "bookDuna3",
+  },
 ];
 
 const HomeHeroSection = () => {
