@@ -1,4 +1,4 @@
-import HomeHeroSection from "./homeHeroSection/HomeHeroSection";
+import HomeHeroSection from "../../components/HomePageComponents/HomeHeroSection/HomeHeroSection";
 import "./HomePage.less";
 
 const HomePage = () => {

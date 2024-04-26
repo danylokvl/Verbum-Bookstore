@@ -1,0 +1,119 @@
+@import "../../../variablesAndMixins.less";
+@import "./BookDunaBlock.less";
+
+.homeHeroSection {
+  background-color: @colors[color4];
+  width: 100%;
+  height: 800px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 800px;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: @colors[color4];
+    z-index: -10;
+  }
+
+  .homeHeroSection__arrowButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 48%;
+    z-index: 20;
+  }
+  .homeHeroSection__sliderContainer {
+    display: flex;
+    height: 100%;
+    .bookDunaBlockStyles();
+  }
+
+  .homeHeroSection__paginationContainer {
+    display: flex;
+    column-gap: 16px;
+    width: 100%;
+    justify-content: center;
+    .homeHeroSection__paginationCircle {
+      width: 14px;
+      height: 14px;
+      border: 1px solid @colors[color1];
+      border-radius: 100px;
+      &.filled {
+        background-color: @colors[color1];
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .homeHeroSection {
+    .homeHeroSection__bookDunaContainer {
+      .homeHeroSection__imageContainer {
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[tablet]) {
+  .homeHeroSection {
+    .homeHeroSection__arrowButtonsContainer {
+      display: none;
+    }
+    .homeHeroSection__paginationContainer {
+      .homeHeroSection__paginationCircle {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileLarge]) {
+  .homeHeroSection {
+    .homeHeroSection__sliderContainer {
+      .homeHeroSection__bookDunaContainer.bookDunaContent {
+        grid-template-rows: 40% 60%;
+        .homeHeroSection__textAndButtonsContainer {
+          text-align: center;
+
+          .homeHeroSection__pricesContainer {
+          }
+          h2 {
+            font-size: 44px;
+          }
+        }
+        .homeHeroSection__buttonsContainer {
+          .displayFlexProps(column, center, unset);
+          row-gap: 24px;
+          button {
+            margin-right: 0 !important;
+          }
+        }
+        .homeHeroSection__imageContainer {
+          &.bookDuna {
+            padding-top: 12%;
+            padding-left: 25%;
+            img {
+              min-width: 120%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileMedium]) {
+  .homeHeroSection {
+    .homeHeroSection__sliderContainer {
+      .homeHeroSection__bookDunaContainer {
+        .homeHeroSection__imageContainer {
+        }
+      }
+    }
+  }
+}
