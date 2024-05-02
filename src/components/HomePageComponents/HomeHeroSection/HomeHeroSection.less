@@ -28,11 +28,16 @@
   }
   .homeHeroSection__sliderContainer {
     display: flex;
+    position: relative;
     height: 100%;
+    overflow: hidden;
+
     .bookDunaBlockStyles();
   }
 
   .homeHeroSection__paginationContainer {
+    position: absolute;
+    bottom: 2%;
     display: flex;
     column-gap: 16px;
     width: 100%;
@@ -49,15 +54,6 @@
   }
 }
 
-@media (max-width: @sizes[desktop]) {
-  .homeHeroSection {
-    .homeHeroSection__bookDunaContainer {
-      .homeHeroSection__imageContainer {
-      }
-    }
-  }
-}
-
 @media (max-width: @sizes[tablet]) {
   .homeHeroSection {
     .homeHeroSection__arrowButtonsContainer {
@@ -67,52 +63,6 @@
       .homeHeroSection__paginationCircle {
         width: 10px;
         height: 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: @sizes[mobileLarge]) {
-  .homeHeroSection {
-    .homeHeroSection__sliderContainer {
-      .homeHeroSection__bookDunaContainer.bookDunaContent {
-        grid-template-rows: 40% 60%;
-        .homeHeroSection__textAndButtonsContainer {
-          text-align: center;
-
-          .homeHeroSection__pricesContainer {
-          }
-          h2 {
-            font-size: 44px;
-          }
-        }
-        .homeHeroSection__buttonsContainer {
-          .displayFlexProps(column, center, unset);
-          row-gap: 24px;
-          button {
-            margin-right: 0 !important;
-          }
-        }
-        .homeHeroSection__imageContainer {
-          &.bookDuna {
-            padding-top: 12%;
-            padding-left: 25%;
-            img {
-              min-width: 120%;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: @sizes[mobileMedium]) {
-  .homeHeroSection {
-    .homeHeroSection__sliderContainer {
-      .homeHeroSection__bookDunaContainer {
-        .homeHeroSection__imageContainer {
-        }
       }
     }
   }

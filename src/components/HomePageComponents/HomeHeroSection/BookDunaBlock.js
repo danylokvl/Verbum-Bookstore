@@ -1,9 +1,9 @@
 import ScrollableButton from "../../buttons/ScrollableButton";
 import bookDuna from "../../../assets/images/bookDuna.png";
 
-const BookDunaBlock = () => {
+const BookDunaBlock = ({ bookDunaBlockRef }) => {
   return (
-    <div className="homeHeroSection__bookDunaContainer">
+    <div className="homeHeroSection__bookDunaContainer" ref={bookDunaBlockRef}>
       <div className="homeHeroSection__textAndButtonsContainer">
         <h2>'Дюна' Френк Герберт</h2>
         <div className="homeHeroSection__pricesContainer">
