@@ -5,47 +5,9 @@
     position: absolute;
     padding: 0 0 0 164px;
     height: 100%;
-    width: 100%;
     display: flex;
     align-items: center;
-    .homeHeroSection__textAndButtonsContainer {
-      .displayFlexProps(column, flex-start, unset);
-      row-gap: 40px;
-      width: 100vw;
-      h2 {
-        white-space: nowrap;
-      }
-      .homeHeroSection__pricesContainer {
-        .homeHeroSection__discountPrice {
-          .textAddStyles("MARIUPOL-REGULAR", 32px, @colors[color5]);
-          margin-right: 24px;
-        }
-        .homeHeroSection__price {
-          .textAddStyles("MARIUPOL-REGULAR", 32px, @colors[color2]);
-          text-decoration: line-through;
-        }
-      }
-      .homeHeroSection__buttonsContainer {
-        .homeHeroSection__button {
-          padding: 16px 40px;
-          border-radius: 100px;
-          font-size: 16px;
-        }
-        .homeHeroSection__button:first-child {
-          background-color: @colors[color1];
-          margin-right: 24px;
-          span {
-            color: white;
-          }
-        }
-        .homeHeroSection__button:last-child {
-          background-color: white;
-          span {
-            color: @colors[color1];
-          }
-        }
-      }
-    }
+
     .homeHeroSection__imageContainer {
       overflow: hidden;
       position: absolute;
@@ -62,7 +24,6 @@
     .homeHeroSection__bookDunaContainer {
       padding: 0 0 0 64px;
       .homeHeroSection__textAndButtonsContainer {
-        max-width: 50%;
         h2 {
           white-space: unset;
         }
@@ -78,19 +39,10 @@
 
   @media (max-width: @sizes[tablet]) {
     .homeHeroSection__bookDunaContainer {
-      flex-direction: column-reverse;
       padding: 0;
       justify-content: space-between;
       padding: 5% 0 15% 0;
       align-items: center;
-      .homeHeroSection__textAndButtonsContainer {
-        align-items: center;
-        text-align: center;
-        max-width: 100%;
-        h2 {
-          font-size: 44px;
-        }
-      }
       .homeHeroSection__imageContainer {
         position: static;
         margin: 0 0 0 18%;

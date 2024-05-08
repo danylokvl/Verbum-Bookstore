@@ -1,0 +1,63 @@
+@import "../../../variablesAndMixins.less";
+@import "./BookDunaBlock.less";
+
+.homeHeroSection {
+  .homeHeroSection__killerBotBlock {
+    position: absolute;
+    padding: 0 0 0 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .homeHeroSection__textAndButtonsContainer {
+      h2 {
+        font-size: 40px;
+        white-space: wrap;
+        line-height: 52px;
+      }
+    }
+    .homeHeroSection__imageContainer {
+      img {
+        max-width: 800px;
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .homeHeroSection {
+    .homeHeroSection__killerBotBlock {
+      .homeHeroSection__imageContainer {
+        img {
+          max-width: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[tablet]) {
+  .homeHeroSection {
+    .homeHeroSection__killerBotBlock {
+      padding: 0;
+      padding: 5% 0 15% 0;
+
+      .homeHeroSection__imageContainer {
+        img {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileLarge]) {
+  .homeHeroSection {
+    .homeHeroSection__killerBotBlock {
+      .homeHeroSection__imageContainer {
+        img {
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}

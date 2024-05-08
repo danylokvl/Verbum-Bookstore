@@ -5,6 +5,7 @@ import "./HomeHeroSection.less";
 import ArrowButton from "../../buttons/ArrowButton";
 import BookDunaBlock from "./BookDunaBlock.js";
 import ReadInEnglishBlock from "./ReadInEnglishBlock.jsx";
+import KillerBotBlock from "../../HomePageComponents/HomeHeroSection/KillerBotBlock.js";
 
 const HomeHeroSection = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -12,8 +13,9 @@ const HomeHeroSection = () => {
 
   const bookDunaBlockRef = useRef(null);
   const readInEnglishBlockRef = useRef(null);
+  const killerBotBlockRef = useRef(null);
 
-  let contentBlocksRefsArray = [bookDunaBlockRef, readInEnglishBlockRef];
+  let contentBlocksRefsArray = [bookDunaBlockRef, readInEnglishBlockRef, killerBotBlockRef];
 
   useEffect(() => {
     function HandleResize() {
@@ -28,26 +30,40 @@ const HomeHeroSection = () => {
   }, []);
 
   useEffect(() => {
+    const lastElementIndex = contentBlocksRefsArray.length - 1;
+    const nextSlideIndex = activeSlideIndex === lastElementIndex ? 0 : activeSlideIndex + 1;
+    const prevSlideIndex = activeSlideIndex === 0 ? lastElementIndex : activeSlideIndex - 1;
     contentBlocksRefsArray.forEach((contentBlockRef, index) => {
-      const valueOfTranslateX =
+      let valueOfTranslateX =
         index === activeSlideIndex ? 0 : index > activeSlideIndex ? slideWidth : -slideWidth;
+
       contentBlockRef.current.setAttribute(
         "style",
-        `width: ${slideWidth}px; transform: translateX(${valueOfTranslateX}px); transition: transform 0.7s ease-in-out; 
-        visibility: ${index > activeSlideIndex ? "hidden" : "visible"}`
+        `width: ${slideWidth}px; transform: translateX(${valueOfTranslateX}px); transition: transform 0.7s ease-in-out; visibility: ${
+          index !== activeSlideIndex ? "hidden" : "visible"
+        } `
       );
+
+      setTimeout(() => {
+        contentBlocksRefsArray[nextSlideIndex].current.setAttribute(
+          "style",
+          `transform: translateX(${slideWidth}px); transition: transform 0s; visibility: hidden`
+        );
+        contentBlocksRefsArray[prevSlideIndex].current.setAttribute(
+          "style",
+          `transform: translateX(${-slideWidth}px); transition: transform 0s; visibility: hidden`
+        );
+      }, 700);
     });
 
-    return () => {};
+    return () => {
+      clearTimeout();
+    };
   }, [activeSlideIndex, slideWidth]);
 
   function ChangeVisibleSlide(direction) {
     if (direction === "next") {
       if (activeSlideIndex === contentBlocksRefsArray.length - 1) {
-        var newContentBlocksRefsArray = contentBlocksRefsArray
-          .slice(1)
-          .concat(contentBlocksRefsArray.slice(0, 1));
-        contentBlocksRefsArray = newContentBlocksRefsArray;
         setActiveSlideIndex(0);
       } else setActiveSlideIndex(activeSlideIndex + 1);
     } else if (direction === "prev") {
@@ -71,16 +87,17 @@ const HomeHeroSection = () => {
       <div {...handlers} className="homeHeroSection__sliderContainer">
         <BookDunaBlock bookDunaBlockRef={bookDunaBlockRef} />
         <ReadInEnglishBlock readInEnglishBlockRef={readInEnglishBlockRef} />
+        <KillerBotBlock killerBotBlockRef={killerBotBlockRef} />
       </div>
       <div className="homeHeroSection__paginationContainer">
-        {/*slidesCountArray.map((_, index) => (
+        {contentBlocksRefsArray.map((_, index) => (
           <div
             className={`homeHeroSection__paginationCircle ${
               index === activeSlideIndex && "filled"
             }`}
             key={index * 12 + Math.random()}
           />
-        ))*/}
+        ))}
       </div>
     </section>
   );

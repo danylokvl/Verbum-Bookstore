@@ -1,14 +1,15 @@
 import ScrollableButton from "../../buttons/ScrollableButton";
-import bookDuna from "../../../assets/images/bookDuna.png";
+import killerBotImage from "../../../assets/images/vsi-systemy-nebezpeka-book.png";
+import "./KillerBotBlock.less";
 
-const BookDunaBlock = ({ bookDunaBlockRef }) => {
+const KillerBotBlock = ({ killerBotBlockRef }) => {
   return (
-    <div className="homeHeroSection__bookDunaContainer" ref={bookDunaBlockRef}>
+    <div className="homeHeroSection__killerBotBlock" ref={killerBotBlockRef}>
       <div className="homeHeroSection__textAndButtonsContainer">
-        <h2>"Дюна" Френк Герберт</h2>
+        <h2>"Всі системи: небзепека" Марта Веллс</h2>
         <div className="homeHeroSection__pricesContainer">
-          <span className="homeHeroSection__discountPrice">400₴</span>
-          <span className="homeHeroSection__price">540₴</span>
+          <span className="homeHeroSection__discountPrice">110₴</span>
+          <span className="homeHeroSection__price">210₴</span>
         </div>
         <div className="homeHeroSection__buttonsContainer">
           <ScrollableButton
@@ -28,10 +29,10 @@ const BookDunaBlock = ({ bookDunaBlockRef }) => {
         </div>
       </div>
       <div className="homeHeroSection__imageContainer">
-        <img src={bookDuna} />
+        <img src={killerBotImage} />
       </div>
     </div>
   );
 };
 
-export default BookDunaBlock;
+export default KillerBotBlock;

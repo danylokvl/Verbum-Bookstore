@@ -9,6 +9,9 @@
   .homeHeroSection__textAndButtonsContainer {
     .displayFlexProps(column, flex-start, unset);
     row-gap: 24px;
+    h2 {
+      font-size: 40px;
+    }
     span {
       font-size: 24px;
       color: @colors[color2];
@@ -54,6 +57,7 @@
     }
     .homeHeroSection__englishBooksImageContainer {
       bottom: 30%;
+      left: 0;
       img {
         max-width: 800px;
       }
@@ -63,8 +67,7 @@
 
 @media (max-width: @sizes[mobileLarge]) {
   .HomeHeroSection__ReadInEnglishBlock {
-    .displayFlexProps(column-reverse, center, unset);
-    padding: 0 0 30% 0;
+    padding: 0 0 50% 0;
     .homeHeroSection__textAndButtonsContainer {
       max-width: 100%;
       text-align: center;
@@ -73,14 +76,20 @@
       }
     }
     .homeHeroSection__englishBooksImageContainer {
-      bottom: 40%;
-      right: -15%;
+      bottom: 50%;
+      left: -10%;
       @media (max-width: @sizes[mobileMedium]) {
-        right: -20%;
+        left: -13%;
+        img {
+          max-width: 460px;
+        }
       }
       @media (max-width: @sizes[mobileSmall]) {
-        bottom: 45%;
-        right: -32%;
+        bottom: 50%;
+        left: -14%;
+        img {
+          max-width: 400px;
+        }
       }
 
       img {
