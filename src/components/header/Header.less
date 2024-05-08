@@ -8,6 +8,17 @@
   z-index: 90;
   padding: 20px 0;
   background-color: white;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .header__navMobile {
     display: none;
   }
