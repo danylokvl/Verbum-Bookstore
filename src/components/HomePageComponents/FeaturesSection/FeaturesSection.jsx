@@ -38,6 +38,7 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
+        <div className="featuresSection__dividerLine" />
       </div>
     </section>
   );

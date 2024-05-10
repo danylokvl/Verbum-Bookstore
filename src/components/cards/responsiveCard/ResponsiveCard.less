@@ -1,0 +1,82 @@
+@import "../../../variablesAndMixins.less";
+
+.responsiveCard {
+  padding-bottom: 12px;
+  max-width: 320px;
+  max-height: 540px;
+  cursor: pointer;
+  transition: outline 0s ease-in;
+  background-color: white;
+  &:hover {
+    outline: 12px solid white;
+    box-shadow: 0 17px 20px 10px rgba(0, 0, 0, 0.05);
+
+    .responsiveCard__content {
+      .responsiveCard__heartButton {
+        transform: translateX(-40px);
+      }
+      .responsiveCard__hoverButtonsContainer {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .responsiveCard__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    .responsiveCard__imageContainer {
+      position: relative;
+      overflow: hidden;
+      .responsiveCard__heartButton {
+        position: absolute;
+        right: -32px;
+        top: 8px;
+      }
+      .responsiveCard__image {
+        width: 100%;
+      }
+      .responsiveCard__hoverButtonsContainer {
+        position: absolute;
+        bottom: -15%;
+        width: 100%;
+        display: flex;
+        .responsiveCard__verticalDivider {
+          height: 100%;
+          width: 1px;
+          background-color: white;
+        }
+        .responsiveCard__hoverButton {
+          width: 50%;
+          padding: 10px 0;
+          background-color: @colors[color1];
+          transition: background-color 0.2s ease;
+          &:hover {
+            background-color: white;
+          }
+        }
+      }
+
+      .responsiveCard__heartButton,
+      .responsiveCard__hoverButtonsContainer {
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+
+    .responsiveCard__textContainer {
+      text-align: center;
+      .displayFlexProps(column, center, unset);
+      row-gap: 12px;
+      h5 {
+      }
+
+      .responsiveCard__author,
+      .responsiveCard__genre,
+      .responsiveCard__price {
+        .textAddStyles("MARIUPOL-REGULAR", 18px, @colors[color3]);
+      }
+    }
+  }
+}
