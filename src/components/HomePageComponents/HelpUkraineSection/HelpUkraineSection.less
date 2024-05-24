@@ -1,0 +1,115 @@
+@import "../../../variablesAndMixins.less";
+
+.helpUkraineSection {
+  .helpUkraineSection__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    justify-content: space-between;
+    .helpUkraineSection__imageContainer {
+      .displayFlexProps(row, center, unset);
+      column-gap: 16px;
+      position: relative;
+      img {
+        max-width: 782px;
+        max-height: 440px;
+        width: 90%;
+      }
+      span {
+        .textAddStyles("MARIUPOL-REGULAR", 16px, @colors[color1]);
+        letter-spacing: 8px;
+        line-height: 22px;
+        text-transform: uppercase;
+        transform: rotate(-180deg);
+        writing-mode: vertical-lr;
+        white-space: nowrap;
+      }
+
+      .helpUkraineSection__lineDivider {
+        width: 1px;
+        height: 100%;
+        background-color: @colors[color3];
+      }
+    }
+    .helpUkraineSection__textAndButtonsContainer {
+      .displayFlexProps(column, flex-start, center);
+      row-gap: 40px;
+      h4 {
+        line-height: 40px;
+      }
+      p {
+        line-height: 25px;
+        letter-spacing: 1px;
+        .textAddStyles("MARIUPOL-REGULAR", 18px, @colors[color2]);
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .helpUkraineSection {
+    .helpUkraineSection__content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 64px;
+      .helpUkraineSection__imageContainer {
+        flex-direction: column;
+        row-gap: 16px;
+
+        img {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            height: 1px;
+            background-color: red;
+          }
+        }
+        span {
+          writing-mode: horizontal-tb;
+          transform: rotate(0deg);
+        }
+
+        .helpUkraineSection__lineDivider {
+          display: none;
+        }
+      }
+      .helpUkraineSection__textAndButtonsContainer {
+        align-items: center;
+        justify-content: flex-start;
+        h4 {
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileLarge]) {
+  .helpUkraineSection {
+    .helpUkraineSection__content {
+      grid-template-rows: 1fr;
+
+      .helpUkraineSection__imageContainer {
+        img {
+          width: 100vw;
+          position: absolute;
+        }
+        span {
+          padding-top: 64%;
+        }
+      }
+      .helpUkraineSection__textAndButtonsContainer {
+        h4 {
+          text-align: center;
+        }
+        p {
+          text-align: start;
+        }
+      }
+    }
+  }
+}

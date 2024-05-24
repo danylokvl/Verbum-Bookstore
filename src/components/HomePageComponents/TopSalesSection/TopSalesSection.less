@@ -1,3 +1,5 @@
+@import "../../../variablesAndMixins.less";
+
 .topSalesSection {
   padding-bottom: 64px;
   width: 100%;
@@ -10,7 +12,39 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: auto auto;
-      column-gap: 40px;
+      grid-auto-rows: auto;
+      grid-gap: 40px;
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .topSalesSection {
+    .topSalesSection__content {
+      .topSalesSection__responsiveCardsContainer {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[tablet]) {
+  .topSalesSection {
+    .topSalesSection__content {
+      .topSalesSection__responsiveCardsContainer {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[mobileLarge]) {
+  .topSalesSection {
+    .topSalesSection__content {
+      .topSalesSection__responsiveCardsContainer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
     }
   }
 }

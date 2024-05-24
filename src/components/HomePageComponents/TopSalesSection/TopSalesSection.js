@@ -48,6 +48,46 @@ const TopSalesSection = () => {
             cardGenre="Фентезі"
             cardPrice="290₴"
           />
+          <ResponsiveCard
+            cardImageSrc={book}
+            cardImageAlt="Тінь у Жариві"
+            cardHeadline="Плоть і Вогонь. Тінь у Жариві"
+            cardAuthor="Д. Л. Арментраут"
+            cardGenre="Фентезі"
+            cardPrice="290₴"
+          />
+          <ResponsiveCard
+            cardImageSrc={book}
+            cardImageAlt="Тінь у Жариві"
+            cardHeadline="Плоть і Вогонь. Тінь у Жариві"
+            cardAuthor="Д. Л. Арментраут"
+            cardGenre="Фентезі"
+            cardPrice="290₴"
+          />
+          <ResponsiveCard
+            cardImageSrc={book}
+            cardImageAlt="Тінь у Жариві"
+            cardHeadline="Плоть і Вогонь. Тінь у Жариві"
+            cardAuthor="Д. Л. Арментраут"
+            cardGenre="Фентезі"
+            cardPrice="290₴"
+          />
+          <ResponsiveCard
+            cardImageSrc={book}
+            cardImageAlt="Тінь у Жариві"
+            cardHeadline="Плоть і Вогонь. Тінь у Жариві"
+            cardAuthor="Д. Л. Арментраут"
+            cardGenre="Фентезі"
+            cardPrice="290₴"
+          />
+          <ResponsiveCard
+            cardImageSrc={book}
+            cardImageAlt="Тінь у Жариві"
+            cardHeadline="Плоть і Вогонь. Тінь у Жариві"
+            cardAuthor="Д. Л. Арментраут"
+            cardGenre="Фентезі"
+            cardPrice="290₴"
+          />
         </div>
       </div>
     </section>

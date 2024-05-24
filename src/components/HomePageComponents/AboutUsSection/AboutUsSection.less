@@ -1,0 +1,81 @@
+@import "../../../variablesAndMixins.less";
+
+.aboutUsSection {
+  padding: 112px 0 0 0;
+
+  .aboutUsSection__sectionHeadline {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .aboutUsSection__content {
+    .displayFlexProps(row, center, space-between);
+
+    .aboutUsSection__textContainer {
+      flex: 0 1 50%;
+      row-gap: 40px;
+      .displayFlexProps(column, flex-start, unset);
+      h3 {
+        text-align: left;
+      }
+
+      p {
+        .textAddStyles("MARIUPOL-REGULAR", 18px, @colors[color1]);
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+
+      .aboutUsSection__bottomTextContent {
+        .displayFlexProps(row, flex-start, unset);
+        column-gap: 32px;
+        .aboutUsSection__bottomTextItemContainer {
+          .displayFlexProps(column, flex-start, unset);
+          span {
+            .textAddStyles("MARIUPOL-REGULAR", 18px, @colors[color3]);
+          }
+        }
+      }
+    }
+    .aboutUsSection__imageContainer {
+      flex: 0 1 auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[desktop]) {
+  .aboutUsSection {
+    .aboutUsSection__content {
+      .aboutUsSection__textContainer {
+        flex-basis: 55%;
+      }
+      .aboutUsSection__imageContainer {
+        flex-basis: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: @sizes[tablet]) {
+  .aboutUsSection {
+    .aboutUsSection__content {
+      flex-direction: column-reverse;
+      row-gap: 40px;
+
+      .aboutUsSection__textContainer {
+        flex-basis: auto;
+        align-items: center;
+        h4 {
+          text-align: center;
+        }
+        .aboutUsSection__bottomTextContent {
+          justify-content: center;
+        }
+      }
+      .aboutUsSection__imageContainer {
+        flex-basis: auto;
+      }
+    }
+  }
+}

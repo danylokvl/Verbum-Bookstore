@@ -16,7 +16,7 @@
         transform: translateX(-40px);
       }
       .responsiveCard__hoverButtonsContainer {
-        transform: translateY(-100%);
+        transform: translateY(-35px);
       }
     }
   }
@@ -40,7 +40,7 @@
       }
       .responsiveCard__hoverButtonsContainer {
         position: absolute;
-        bottom: -15%;
+        bottom: -35px;
         width: 100%;
         display: flex;
         .responsiveCard__verticalDivider {
@@ -50,9 +50,10 @@
         }
         .responsiveCard__hoverButton {
           width: 50%;
-          padding: 10px 0;
+          height: 35px;
           background-color: @colors[color1];
           transition: background-color 0.2s ease;
+          .displayFlexProps(column, center, center);
           &:hover {
             background-color: white;
           }
@@ -70,12 +71,17 @@
       .displayFlexProps(column, center, unset);
       row-gap: 12px;
       h5 {
+        font-size: 20px;
       }
 
       .responsiveCard__author,
       .responsiveCard__genre,
       .responsiveCard__price {
         .textAddStyles("MARIUPOL-REGULAR", 18px, @colors[color3]);
+      }
+
+      .responsiveCard__price {
+        color: @colors[color1];
       }
     }
   }
