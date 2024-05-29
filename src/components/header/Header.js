@@ -29,10 +29,10 @@ const Header = () => {
             <a>Книги</a>
           </li>
           <li className="header__linksListItem">
-            <a>Доставка і Оплата</a>
+            <a>Автори</a>
           </li>
           <li className="header__linksListItem">
-            <a>Контакти</a>
+            <a>Доставка і Оплата</a>
           </li>
           <li className="header__linksListItem">
             <a>FAQs</a>
