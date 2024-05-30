@@ -1,0 +1,49 @@
+@import "../../variablesAndMixins.less";
+
+.genresFilter {
+  nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    align-items: start;
+    .genresFilter__genreBlock {
+      padding: 14px 18px 14px 24px;
+      border-radius: 100px;
+      position: relative;
+      border: 1px solid white;
+      .displayFlexProps(row, center, unset);
+      column-gap: 4px;
+      cursor: pointer;
+      span {
+        .textAddStyles("MARIUPOL-REGULAR", 16px, @colors[color1]);
+        letter-spacing: 2px;
+        line-height: 24px;
+      }
+      &:hover {
+        background-color: @colors[color4];
+        border: 1px solid @colors[color3];
+      }
+
+      .genresFilter__hiddenLinksList {
+        position: absolute;
+        top: 110%;
+        left: 0px;
+        padding: 32px 24px;
+        width: 100%;
+        background-color: @colors[color2];
+        color: white;
+        border-radius: 20px;
+        .displayFlexProps(column, flex-start, unset);
+        row-gap: 24px;
+        li {
+          position: relative;
+          overflow-x: hidden;
+          a {
+            .linkAddLineEffect(white);
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

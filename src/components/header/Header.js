@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.less";
 import ToggleMenu from "../toggleMenu/ToggleMenu";
@@ -13,6 +14,7 @@ import xmark from "../../assets/icons/xmark.svg";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.querySelector(".overlay").classList.toggle("active", menuIsOpen);
@@ -23,10 +25,12 @@ const Header = () => {
     <header className="header">
       <SearchBlock />
       <nav className="header__navLargeDesktop">
-        <img className="header__logo" src={logo} />
+        <a onClick={() => navigate("/")}>
+          <img className="header__logo" src={logo} />
+        </a>
         <ul className="header__linksListLeft">
           <li className="header__linksListItem">
-            <a>Книги</a>
+            <a onClick={() => navigate("/books")}>Книги</a>
           </li>
           <li className="header__linksListItem">
             <a>Автори</a>

@@ -1,0 +1,39 @@
+@import "../../variablesAndMixins.less";
+
+.booksPage {
+  padding-bottom: 1000px;
+  .booksPage__topBlock {
+    height: 300px;
+    position: relative;
+    overflow-x: hidden;
+    .booksPage__headlineContainer {
+      .displayFlexProps(row, center, center);
+      height: 250px;
+      .booksPage__headlineBackgroundImage {
+        position: absolute;
+        top: 0;
+        height: inherit;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -10;
+      }
+      .booksPage__breadCrumbsContainer {
+        padding: 32px 200px;
+        background-color: @colors[color1];
+        width: fit-content;
+        h3 {
+          color: white;
+          margin-bottom: 8px;
+          text-align: center;
+        }
+
+        .booksPage__breadCrumbsLinks {
+          .displayFlexProps(row, center, unset);
+          a {
+            .textAddStyles("MARIUPOL-REGULAR", 16px, @colors[color4]);
+          }
+        }
+      }
+    }
+  }
+}
